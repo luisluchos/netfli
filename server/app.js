@@ -17,7 +17,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/api', apiRouter)
 
 //send to angular
-app.use("*",function(req,res){
+app.get('/404',function(req,res){
+    res.status(404).sendFile(path.join(__dirname,"public/index.html"));
+});
+
+app.get("*",function(req,res){
     res.sendFile(path.join(__dirname,"public/index.html"));
 });
 
