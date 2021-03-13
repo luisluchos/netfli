@@ -17,7 +17,7 @@ export class MoviesComponent implements OnInit {
      this.route.data.subscribe(data => {
        console.log("data movies component",data);
        
-      this.movies = data.movies.movies;
+      this.movies = data.movies.list;
       
     }); 
 }

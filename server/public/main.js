@@ -53,8 +53,8 @@ class MoviesComponent {
     }
     ngOnInit() {
         this.route.data.subscribe(data => {
-            console.log(data);
-            this.movies = data.movies.movies;
+            console.log("data movies component", data);
+            this.movies = data.movies.list;
         });
     }
 }
