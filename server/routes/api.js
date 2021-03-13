@@ -1,9 +1,12 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
-/* GET api. */
+/* GET users listing. */
 router.get('/comments', function(req, res, next) {
-  res.json({"comments":[{"id":1,"name":"me"}]});
+  res.json({comments: [{id: 1, name: 'me'}]})
+});
+router.get('/movies', function(req, res, next) {
+  res.json({movies: [{id: 1, name: 'Kill Bill'}, {id: 2, name: 'Pulp Fiction'}]})
 });
 
 module.exports = router;

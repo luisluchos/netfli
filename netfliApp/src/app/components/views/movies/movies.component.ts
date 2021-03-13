@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-movies',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MoviesComponent implements OnInit {
 
-  constructor() { }
+  movies:any;
+
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-  }
 
+     this.route.data.subscribe(data => {
+       console.log("data movies component",data);
+       
+      this.movies = data.movies.movies;
+      
+    }); 
+}
 }

@@ -15,5 +15,8 @@
   "devDependencies": {
     "express-generator": "^4.16.1",
     "nodemon": "^2.0.7"
+  },
+  "dependencies": {
+    "cors": "^2.8.5"
   }
 }
