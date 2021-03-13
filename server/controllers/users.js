@@ -11,6 +11,17 @@ module.exports = {
             });
         res.json(user)
 
+             },
+
+     getUsers: async function(req, res, next) {
+
+        let users = await usersModel.find({}, function(err, usersDetail) {
+        if (err) throw err;
+        console.log("user detail:",usersDetail) ; 
+        return usersDetail ;
+            });
+        res.json(users)
+
              }
 
 }
