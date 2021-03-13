@@ -3,24 +3,16 @@ const moviesModel = require('../models/movies');
 module.exports = {
 
     detailMovies: async function(req, res, next) {
-       
-        let movie = await moviesModel.findById(req.params.id, function(err, movieDetail) {
-        if (err) throw err;
-        return movieDetail ;
-            });
-        res.json(movie)
-
+        let movie = await moviesModel.findById(req.params.id);
+        res.json({movie: movie})
              },
 
-     getMovies: async function(req, res, next) {
-
-        let movies= await moviesModel.find({}, function(err, moviesDetail) {
-        if (err) throw err;
+     getMovies: async (req, res, next) => {
+        let limit = req.query.limit ? parseInt(req.query.limit) : 10;
+        let offset = req.query.offset ? parseInt(req.query.offset) : 0;
         
-        return moviesDetail ;
-            });
-        res.json(movies)
-
-             }
+        let movies = await moviesModel.find().limit(limit).skip(offset);// .skip= The number of documents to skip in the results set.
+        res.json({movies: movies});
+      }
 
 }

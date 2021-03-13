@@ -4,7 +4,7 @@ const commentsController = require('../controllers/comment.js');
 
 
 /* GET comments listing. */
-router.get('/c', function(req, res, next) {
+router.get('/', function(req, res, next) {
   res.json({comments: [{id: 1, name: 'me'}]})
 });
 
