@@ -12,7 +12,7 @@ const routes: Routes = [
     pathMatch: 'full',
     component: MoviesComponent,
     resolve: {
-      movies: ApiResolver
+      moviesResolve: ApiResolver
     }
   }, 
   { path: '404', component: PageNotFoundComponent },

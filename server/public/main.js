@@ -36,7 +36,7 @@ function MoviesComponent_ul_2_li_1_Template(rf, ctx) { if (rf & 1) {
 } if (rf & 2) {
     const movie_r3 = ctx.$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate2"](" ", movie_r3.id, " - ", movie_r3.name, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate2"](" ", movie_r3.year, " - ", movie_r3.title, " ");
 } }
 function MoviesComponent_ul_2_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "ul");
@@ -54,7 +54,7 @@ class MoviesComponent {
     ngOnInit() {
         this.route.data.subscribe(data => {
             console.log("data movies component", data);
-            this.movies = data.movies.list;
+            this.movies = data.moviesResolve.movies;
         });
     }
 }
@@ -384,7 +384,7 @@ const routes = [
         pathMatch: 'full',
         component: _components_views_movies_movies_component__WEBPACK_IMPORTED_MODULE_2__["MoviesComponent"],
         resolve: {
-            movies: _services_api_resolver__WEBPACK_IMPORTED_MODULE_4__["ApiResolver"]
+            moviesResolve: _services_api_resolver__WEBPACK_IMPORTED_MODULE_4__["ApiResolver"]
         }
     },
     { path: '404', component: _components_views_page_not_found_page_not_found_component__WEBPACK_IMPORTED_MODULE_3__["PageNotFoundComponent"] },
