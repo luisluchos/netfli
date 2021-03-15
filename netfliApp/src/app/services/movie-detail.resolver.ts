@@ -19,7 +19,10 @@ export class MovieDetailResolver implements Resolve<boolean> {
   ) { }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> {
+
     const movieId:any = route.paramMap.get('id');
+    console.log("ruta resolver", route);
+    
     return this.apiService.getMovie(movieId) 
   }
 }
