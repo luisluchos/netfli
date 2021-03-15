@@ -7,12 +7,16 @@ import { PageNotFoundComponent } from './components/views/page-not-found/page-no
 import { MoviesComponent } from './components/views/movies/movies.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { MovieSnippetComponent } from './components/widgets/movie-snippet/movie-snippet.component';
+import { MovieDetailComponent } from './components/movie-detail/movie-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PageNotFoundComponent,
-    MoviesComponent
+    MoviesComponent,
+    MovieSnippetComponent,
+    MovieDetailComponent
   ],
   imports: [
     BrowserModule,

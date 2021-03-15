@@ -18,7 +18,10 @@ export class MoviesComponent implements OnInit {
        console.log("data movies component",data);
        
       this.movies = data.moviesResolve.movies;
+      console.log("resolve1",data.moviesResolve.movies);
+      
       
     }); 
 }
 }
+

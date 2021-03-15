@@ -14,5 +14,12 @@ export class ApiService {
   getAllMovies(){
     return this.http.get(`${this.BASE_URL}/movies`);
   }
+
+  getMovie(id:string | null){
+    return this.http.get(`${this.BASE_URL}/movies/${id}`);
+  }
+
+
 } 
+
 

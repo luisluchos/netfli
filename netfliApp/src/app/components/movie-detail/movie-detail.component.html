@@ -1,0 +1,11 @@
+<h1>Movie Detail</h1>
+
+<div>
+    <h3>{{movie._id}}</h3>
+    <a [routerLink]="['/movie', movie._id]">{{movie.title}}</a>
+    <p>{{movie.plot}}</p>
+    <button>Add Comment</button>
+    <button>Edit Comment</button>
+    <button>Delete Comment</button>
+
+</div>
