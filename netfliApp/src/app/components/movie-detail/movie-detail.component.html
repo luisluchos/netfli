@@ -4,8 +4,11 @@
     <h3>{{movie._id}}</h3>
     <a [routerLink]="['/movie', movie._id]">{{movie.title}}</a>
     <p>{{movie.plot}}</p>
-    <button>Add Comment</button>
-    <button>Edit Comment</button>
-    <button>Delete Comment</button>
+
+    <div>
+        <button class="button-row" mat-raised-button>Add Comment</button>
+        <button class="button-row" mat-raised-button>Edit Comment</button>
+        <button class="button-row" mat-raised-button color="warn">Delete Comment</button>
+    </div>
 
 </div>

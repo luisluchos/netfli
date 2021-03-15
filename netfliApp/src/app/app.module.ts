@@ -9,6 +9,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { MovieSnippetComponent } from './components/widgets/movie-snippet/movie-snippet.component';
 import { MovieDetailComponent } from './components/movie-detail/movie-detail.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+//Angular Mterial
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,9 @@ import { MovieDetailComponent } from './components/movie-detail/movie-detail.com
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatButtonModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
