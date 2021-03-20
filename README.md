@@ -1,6 +1,6 @@
-# Instalation
+# Installation
 
-you must run:
+You must run:
 
 ```
 npm i
@@ -16,29 +16,33 @@ Go to server folder and run
 npm i
 ```
 
+## Development commands
 
-## Development comands
-
-for development purposes we have thes tools in our package.jason:
+For development purposes we have these tools in our package.json:
 * angular dev server
 * nodemon
+
+From the root of this project you can run in 2 different consoles:
 ```
 npm run dev-server
 ```
-
 ```
 npm run serve-angular
 ```
 
+## Production commands
 
-for Production purposes we have thes tools in our package.jason:
+For production purposes we have these tools in our package.json:
 * angular build
 * node
+
+From the root of this project must run first:
+```
+npm run build-angular
+```
+And then
 ```
 npm start
 ```
 
-```
-npm run build-angular
-```
 

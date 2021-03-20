@@ -6,6 +6,12 @@ const usersRouter = require('./users');
 const commentsRouter = require('./comments');
 const authRouter = require('./auth');
 
+const routeNeedsAuthMiddleware = require('../middlewares/routeNeedsAuth')
+const tokenIsValidAuthMiddleware = require('../middlewares/tokenIsValid')
+
+
+/* router.use(routeNeedsAuthMiddleware)
+router.use(tokenIsValidAuthMiddleware) */
 
 router.use('/movies', moviesRouter)
 router.use('/users', usersRouter)

@@ -12,7 +12,7 @@ var cors = require('cors')
 var app = express();
 
 app.use(logger('dev'));
-app.use(express.json());
+app.use(express.json()); // de este modo soporta la request que se le está haciendo cuando se le pasa un objeto, y lo parsea para tenerlo en el req.body
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
@@ -27,29 +27,14 @@ app.use(cors(corsOptions));
 
 app.use('/api', apiRouter)
 
-//send to angular
+//send to angular if dont find path url
 app.get('/404',function(req,res){
     res.status(404).sendFile(path.join(__dirname,"public/index.html"));
 });
-
+// cualquiera que no sea /api o /404 lo enviamos a indexhtml que ha sido generado por angular
 app.get("*",function(req,res){
     res.sendFile(path.join(__dirname,"public/index.html"));
 });
-
-// CUSTOM MIDDLEWARES
-app.use(function(req, res, next) {
-    req.infoFromMid1 = new Date()
-    console.log('middleware-1');
-    next();
-  })
-  app.use(function(req, res, next) {
-    console.log('middleware-2');
-    next();
-  })
-  app.use(function(req, res, next) {
-    console.log('middleware-3', req.infoFromMid1);
-    next();
-  })
 
 
 module.exports = app;

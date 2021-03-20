@@ -8,7 +8,7 @@ var app = require('../app');
 var debug = require('debug')('server:server');
 var http = require('http');
 const mongoose = require('mongoose');
-require('dotenv').config()
+require('dotenv').config({path:__dirname + `/../../.env`}) // así .env estará a mano de server, si no solo lo podíamos levantar desde la raiz.
 
 /**
  * Get port from environment and store in Express.
@@ -16,6 +16,7 @@ require('dotenv').config()
 
 var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
+console.log("Port:", port);
 
 /**
  * Create HTTP server.
@@ -27,7 +28,8 @@ var server = http.createServer(app);
  * Connetc to mondoDB., si es un servicio imprescindible lo ponemos aquí, si no lo pondriamos en api.js
  */
 
-mongoose.connect('mongodb://localhost:27017/neoflix', {useNewUrlParser: true, useUnifiedTopology: true});
+//mongoose.connect('mongodb://localhost:27017/neoflix', {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(`${process.env.MONGO_DB_HOST}:${process.env.MONGO_DB_PORT}/${process.env.MONGO_DB_DATABASE}`, {useNewUrlParser: true, useUnifiedTopology: true});
     
 const connection = mongoose.connection;
 

@@ -55,7 +55,7 @@ class MoviesComponent {
 }
 MoviesComponent.ɵfac = function MoviesComponent_Factory(t) { return new (t || MoviesComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"])); };
 MoviesComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: MoviesComponent, selectors: [["app-movies"]], decls: 3, vars: 1, consts: [[4, "ngFor", "ngForOf"], [3, "movie"]], template: function MoviesComponent_Template(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "h2");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "h1");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "Movies");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, MoviesComponent_div_2_Template, 3, 1, "div", 0);
@@ -539,6 +539,7 @@ class MovieDetailResolver {
     }
     resolve(route, state) {
         const movieId = route.paramMap.get('id');
+        console.log("ruta resolver", route);
         return this.apiService.getMovie(movieId);
     }
 }
