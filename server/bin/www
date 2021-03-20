@@ -28,8 +28,8 @@ var server = http.createServer(app);
  * Connetc to mondoDB., si es un servicio imprescindible lo ponemos aquí, si no lo pondriamos en api.js
  */
 
-//mongoose.connect('mongodb://localhost:27017/neoflix', {useNewUrlParser: true, useUnifiedTopology: true});
-mongoose.connect(`${process.env.MONGO_DB_HOST}:${process.env.MONGO_DB_PORT}/${process.env.MONGO_DB_DATABASE}`, {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(process.env.DATABASE_URI || 'mongodb://localhost:27017/neoflix', {useNewUrlParser: true, useUnifiedTopology: true});
+//mongoose.connect(process.env.MONGODB_URI || `${process.env.MONGO_DB_HOST}:${process.env.MONGO_DB_PORT}/${process.env.MONGO_DB_DATABASE}`, {useNewUrlParser: true, useUnifiedTopology: true});
     
 const connection = mongoose.connection;
 
