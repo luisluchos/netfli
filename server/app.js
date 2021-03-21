@@ -17,13 +17,14 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-const corsOptions = {
-    origin: 'http://localhost:4200',
+ const corsOptions = {
+    origin:'https://tranquil-wave-38036.herokuapp.com',
     optionsSuccessStatus: 200
-  }
+  } 
   
 app.use(cors(corsOptions));
   
+
 
 app.use('/api', apiRouter)
 
